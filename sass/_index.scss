@@ -1,0 +1,314 @@
+.header {
+    width: 100%;
+    background-color: $gray;
+    color: $yellow;
+    .caculate {
+        width: 640px;
+        height: 300px;
+        margin: auto;
+        padding: 92px 0;
+        img[class="logo"] {
+            float: left;
+            margin-right: 97px;
+            margin-top: 20px;
+        }
+        .dataInput {
+            float: left;
+            margin-right: 53px;
+            label {
+                display: block;
+                font-size: 18px;
+                line-height: 1.5em;
+            }
+            input {
+                display: block;
+                width: 250px;
+                height: 40px;
+                font-size: 24px;
+                border: 2px solid $yellow;
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.18);
+                color: white;
+                text-indent: 16px;
+            }
+            input:focus {
+                border: 2px solid white;
+                outline: none !important;
+                box-shadow: 0 0 10px #AEAEAE;
+            }
+            input[id="height"] {
+                margin-bottom: 23px;
+            }
+            //placeholder-color
+            ::-webkit-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: $cInputFont;
+            }
+            ::-moz-placeholder {
+                /* Firefox 19+ */
+                color: $cInputFont;
+            }
+            :-ms-input-placeholder {
+                /* IE 10+ */
+                color: $cInputFont;
+            }
+            :-moz-placeholder {
+                /* Firefox 18- */
+                color: $cInputFont;
+            }
+        }        
+        .btn {
+            outline: none;
+        }
+        .btn.original {
+            margin-top: 20px;
+            display: block;
+            float: left;
+            border-radius: 100%;
+            width: 120px;
+            height: 120px;
+            background: $yellow;
+            border: none;
+            cursor: pointer;
+            color: $gray;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn.original:hover {
+            background: #FFD366;
+            box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64);
+        }
+        .btn.original:active {
+            background: #DEA921;
+        }
+        .btn.resualt {
+            margin-top: 20px;
+            display: block;
+            float: left;
+            border-radius: 100%;
+            width: 123px;
+            height: 123px;
+            background: $gray;
+            cursor: pointer;
+            color: $Normal;
+            font-size: 24px;
+            border: 6px solid $Normal;
+            position: relative;
+            h2 {
+                font-size: 32px;
+            }
+            h3 {
+                font-size: 14px;
+            }
+            .loop {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                border: 3px solid $gray;
+                background: url(../images/icons_loop.png) center center no-repeat $Normal;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .btn.resualt.Normal {
+            color: $Normal;
+            border-color: $Normal;
+            .loop {
+                background-color: $Normal;
+            }
+        }
+        .btn.resualt.Underweight {
+            color: $Underweight;
+            border-color: $Underweight;
+            .loop {
+                background-color: $Underweight;
+            }
+        }
+        .btn.resualt.Obese1 {
+            color: $Obese1;
+            border-color: $Obese1;
+            .loop {
+                background-color: $Obese1;
+            }
+        }
+        .btn.resualt.Obese2 {
+            color: $Obese2;
+            border-color: $Obese2;
+            .loop {
+                background-color: $Obese2;
+            }
+        }
+        .btn.resualt.Obese3 {
+            color: $Obese3;
+            border-color: $Obese3;
+            .loop {
+                background-color: $Obese3;
+            }
+        }
+        .btn.resualt.Obese4 {
+            color: $Obese4;
+            border-color: $Obese4;
+            .loop {
+                background-color: $Obese4;
+            }
+        }
+        .btn.resualt:hover, .btn.resualt:active {
+            .loop {
+                transition: 1s;
+                transform: rotate(360deg);
+            }
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            img[class="logo"] {
+                display: block;
+                float: none;
+                margin: 40px auto 60px auto;
+            }
+            .dataInput {
+                float: none;
+                width: 250px;
+                margin: 0 auto 40px auto;
+            }
+            .btn.original {
+                float: none;
+                margin: 0 auto 40px auto;
+            }
+            .btn.resualt {
+                float: none;
+                margin: 0 auto 40px auto;
+            }
+        }
+        @include clearfix();
+    }
+}
+
+.content {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding-bottom: 74px;
+    //height: auto;
+    h2 {
+        width: 96px;
+        //background-color: white;
+        display: block;
+        margin: auto;
+        padding: 36px 0;
+        font-size: 24px;
+    }
+    ol {
+        width: 624px;
+        height: 62px;
+        margin: auto;
+        margin-bottom: 16px;
+        background-color: white;
+        border-left: 7px solid $Normal;
+        li {
+            display: inline-block;
+        }
+        .Level {
+            margin: 21px 0;
+            margin-left: 13px;
+            width: 80px;
+            font-size: 20px;
+        }
+        .Big {
+            margin: 21px 0;
+            margin-left: 7px;
+            font-size: 20px;
+        }
+        .Big.BMI {
+            width: 52px;
+        }
+        .Big.Weight {
+            width: 46px;
+        }
+        .Big.Height {
+            width: 64px;
+        }
+        .Small {
+            margin: 25px 0;
+            margin-left: 42px;
+            font-size: 12px;
+        }
+    }
+    ol[class="Normal"] {
+        border-left-color: $Normal;
+    }
+    ol[class="Underweight"] {
+        border-left-color: $Underweight;
+    }
+    ol[class="Obese1"] {
+        border-left-color: $Obese1;
+    }
+    ol[class="Obese2"] {
+        border-left-color: $Obese2;
+    }
+    ol[class="Obese3"] {
+        border-left-color: $Obese3;
+    }
+    ol[class="Obese4"] {
+        border-left-color: $Obese4;
+    }
+    @media (max-width: 625px) {
+        ol {
+            width: 320px;
+            height: 60px;
+            padding: 10px 0;
+            li {
+                display: block;
+            }
+            .Level {
+                margin: 0 0;
+                margin-left: 0px;
+                font-size: 16px;
+                width: 110px;
+                float: left;
+                padding: 0 5px;
+            }
+            .Big {
+                margin: 0 0;
+                margin-left: 0px;
+                font-size: 20px;
+                float: left;
+                padding: 0 5px;
+            }
+            .Big.BMI {
+                width: 60px;
+            }
+            .Big.Weight {
+                width: 60px;
+            }
+            .Big.Height {
+                width: 60px;
+                margin-right: 10px;
+            }
+            .Small {
+                margin: 5px 0 0 0;
+                margin-left: 0;
+                font-size: 10px;
+                width: 40px;
+                float: left;
+                padding: 0 5px;
+            }
+            .Small.Date {
+                width: 80px;
+            }
+            @include clearfix();
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    background-color: $yellow;
+    img {
+        display: block;
+        margin: auto;
+        padding: 18px 0;
+        width: 55px;
+    }
+}

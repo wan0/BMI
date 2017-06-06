@@ -1,0 +1,32 @@
+$font: 微軟正黑體;
+$yellow: #FFD366;
+$gray: #424242;
+$cInputFont: rgba(255, 255, 255, 0.5);
+
+//Level Color
+$Normal: #86D73E;
+$Underweight: #31BAF9;
+$Obese1: #FF982D;
+$Obese2: #FF6C02;
+$Obese3: #FF6C02;
+$Obese4: #FF1200;
+
+/*
+體重過輕	BMI<18.5	
+健康體位	18.5<=BMI<24
+體位異常	過重：24<=BMI<27
+			輕度肥胖：27 <= BMI < 30
+			中度肥胖：30 <= BMI < 35
+			重度肥胖：BMI >= 35
+*/
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

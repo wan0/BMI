@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="shortcut icon" href="images/icon.ico" />
+    <link rel="bookmark" href="images/icon.ico" />
+    <link rel="apple-touch-icon" href="images/icon.ico" />
+    <meta property="og:title" content="BMI Caculator" />
+    <meta property="og:description" content="來算算自己的BMI，為健康把關">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:image" content="images/thumbnail.png" />
+    <title>BMI Caculator</title>
+</head>
+
+<body>
+    <div class="header">
+        <form action="" class="caculate">
+            <img src="images/BMICLogo.png" alt="logo" class="logo">
+            <div class="dataInput">
+                <label for="height">身高 cm</label>
+                <input type="text" id="height" placeholder="請輸入身高">
+                <label for="weight">體重 kg</label>
+                <input type="text" id="weight" placeholder="請輸入體重">
+            </div>
+            <button type="submit" class="btn original">看結果</button>
+            <!--button type="submit" class="btn_resualt"><h2>20.90</h2><h3>BMI</h3><div class="loop"></div></button-->
+        </form>
+    </div>
+    <div class="content">
+        <h2>BMI紀錄</h2>
+        <ol class="Normal">
+            <li class="Level">理想</li>
+            <li class="Small">BMI</li>
+            <li class="Big BMI">20.90</li>
+            <li class="Small">weight</li>
+            <li class="Big Weight">70kg</li>
+            <li class="Small">height</li>
+            <li class="Big Height">180cm</li>
+            <li class="Small Date">06-19-2017</li>
+        </ol>
+    </div>
+    <div class="footer">
+        <img src="images/sBMICLogo.png" alt="logo">
+    </div>
+    <script src="js/all.js"></script>
+</body>
+
+</html>

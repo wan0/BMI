@@ -1,0 +1,332 @@
+@charset "UTF-8";
+/*
+體重過輕	BMI<18.5	
+健康體位	18.5<=BMI<24
+體位異常	過重：24<=BMI<27
+			輕度肥胖：27 <= BMI < 30
+			中度肥胖：30 <= BMI < 35
+			重度肥胖：BMI >= 35
+*/
+/*CSS RESET START*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+i {
+  font-style: italic; }
+
+a {
+  text-decoration: none; }
+
+*, body {
+  font-family: 微軟正黑體; }
+
+.header {
+  width: 100%;
+  background-color: #424242;
+  color: #FFD366; }
+  .header .caculate {
+    width: 640px;
+    height: 300px;
+    margin: auto;
+    padding: 92px 0; }
+    .header .caculate img[class="logo"] {
+      float: left;
+      margin-right: 97px;
+      margin-top: 20px; }
+    .header .caculate .dataInput {
+      float: left;
+      margin-right: 53px; }
+      .header .caculate .dataInput label {
+        display: block;
+        font-size: 18px;
+        line-height: 1.5em; }
+      .header .caculate .dataInput input {
+        display: block;
+        width: 250px;
+        height: 40px;
+        font-size: 24px;
+        border: 2px solid #FFD366;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.18);
+        color: white;
+        text-indent: 16px; }
+      .header .caculate .dataInput input:focus {
+        border: 2px solid white;
+        outline: none !important;
+        -webkit-box-shadow: 0 0 10px #AEAEAE;
+        box-shadow: 0 0 10px #AEAEAE; }
+      .header .caculate .dataInput input[id="height"] {
+        margin-bottom: 23px; }
+      .header .caculate .dataInput ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: rgba(255, 255, 255, 0.5); }
+      .header .caculate .dataInput ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: rgba(255, 255, 255, 0.5); }
+      .header .caculate .dataInput :-ms-input-placeholder {
+        /* IE 10+ */
+        color: rgba(255, 255, 255, 0.5); }
+      .header .caculate .dataInput :-moz-placeholder {
+        /* Firefox 18- */
+        color: rgba(255, 255, 255, 0.5); }
+    .header .caculate .btn {
+      outline: none; }
+    .header .caculate .btn.original {
+      margin-top: 20px;
+      display: block;
+      float: left;
+      border-radius: 100%;
+      width: 120px;
+      height: 120px;
+      background: #FFD366;
+      border: none;
+      cursor: pointer;
+      color: #424242;
+      font-size: 24px;
+      font-weight: bold; }
+    .header .caculate .btn.original:hover {
+      background: #FFD366;
+      -webkit-box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64);
+      box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64); }
+    .header .caculate .btn.original:active {
+      background: #DEA921; }
+    .header .caculate .btn.resualt {
+      margin-top: 20px;
+      display: block;
+      float: left;
+      border-radius: 100%;
+      width: 123px;
+      height: 123px;
+      background: #424242;
+      cursor: pointer;
+      color: #86D73E;
+      font-size: 24px;
+      border: 6px solid #86D73E;
+      position: relative; }
+      .header .caculate .btn.resualt h2 {
+        font-size: 32px; }
+      .header .caculate .btn.resualt h3 {
+        font-size: 14px; }
+      .header .caculate .btn.resualt .loop {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 3px solid #424242;
+        background: url(../images/icons_loop.png) center center no-repeat #86D73E;
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+    .header .caculate .btn.resualt.Normal {
+      color: #86D73E;
+      border-color: #86D73E; }
+      .header .caculate .btn.resualt.Normal .loop {
+        background-color: #86D73E; }
+    .header .caculate .btn.resualt.Underweight {
+      color: #31BAF9;
+      border-color: #31BAF9; }
+      .header .caculate .btn.resualt.Underweight .loop {
+        background-color: #31BAF9; }
+    .header .caculate .btn.resualt.Obese1 {
+      color: #FF982D;
+      border-color: #FF982D; }
+      .header .caculate .btn.resualt.Obese1 .loop {
+        background-color: #FF982D; }
+    .header .caculate .btn.resualt.Obese2 {
+      color: #FF6C02;
+      border-color: #FF6C02; }
+      .header .caculate .btn.resualt.Obese2 .loop {
+        background-color: #FF6C02; }
+    .header .caculate .btn.resualt.Obese3 {
+      color: #FF6C02;
+      border-color: #FF6C02; }
+      .header .caculate .btn.resualt.Obese3 .loop {
+        background-color: #FF6C02; }
+    .header .caculate .btn.resualt.Obese4 {
+      color: #FF1200;
+      border-color: #FF1200; }
+      .header .caculate .btn.resualt.Obese4 .loop {
+        background-color: #FF1200; }
+    .header .caculate .btn.resualt:hover .loop, .header .caculate .btn.resualt:active .loop {
+      -webkit-transition: 1s;
+      -o-transition: 1s;
+      transition: 1s;
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg); }
+    @media (max-width: 768px) {
+      .header .caculate {
+        width: 100%;
+        height: auto;
+        padding: 0; }
+        .header .caculate img[class="logo"] {
+          display: block;
+          float: none;
+          margin: 40px auto 60px auto; }
+        .header .caculate .dataInput {
+          float: none;
+          width: 250px;
+          margin: 0 auto 40px auto; }
+        .header .caculate .btn.original {
+          float: none;
+          margin: 0 auto 40px auto; }
+        .header .caculate .btn.resualt {
+          float: none;
+          margin: 0 auto 40px auto; } }
+    .header .caculate:before, .header .caculate:after {
+      content: "";
+      display: table; }
+    .header .caculate:after {
+      clear: both; }
+
+.content {
+  width: 100%;
+  background-color: #F5F5F5;
+  padding-bottom: 74px; }
+  .content h2 {
+    width: 96px;
+    display: block;
+    margin: auto;
+    padding: 36px 0;
+    font-size: 24px; }
+  .content ol {
+    width: 624px;
+    height: 62px;
+    margin: auto;
+    margin-bottom: 16px;
+    background-color: white;
+    border-left: 7px solid #86D73E; }
+    .content ol li {
+      display: inline-block; }
+    .content ol .Level {
+      margin: 21px 0;
+      margin-left: 13px;
+      width: 80px;
+      font-size: 20px; }
+    .content ol .Big {
+      margin: 21px 0;
+      margin-left: 7px;
+      font-size: 20px; }
+    .content ol .Big.BMI {
+      width: 52px; }
+    .content ol .Big.Weight {
+      width: 46px; }
+    .content ol .Big.Height {
+      width: 64px; }
+    .content ol .Small {
+      margin: 25px 0;
+      margin-left: 42px;
+      font-size: 12px; }
+  .content ol[class="Normal"] {
+    border-left-color: #86D73E; }
+  .content ol[class="Underweight"] {
+    border-left-color: #31BAF9; }
+  .content ol[class="Obese1"] {
+    border-left-color: #FF982D; }
+  .content ol[class="Obese2"] {
+    border-left-color: #FF6C02; }
+  .content ol[class="Obese3"] {
+    border-left-color: #FF6C02; }
+  .content ol[class="Obese4"] {
+    border-left-color: #FF1200; }
+  @media (max-width: 625px) {
+    .content ol {
+      width: 320px;
+      height: 60px;
+      padding: 10px 0; }
+      .content ol li {
+        display: block; }
+      .content ol .Level {
+        margin: 0 0;
+        margin-left: 0px;
+        font-size: 16px;
+        width: 110px;
+        float: left;
+        padding: 0 5px; }
+      .content ol .Big {
+        margin: 0 0;
+        margin-left: 0px;
+        font-size: 20px;
+        float: left;
+        padding: 0 5px; }
+      .content ol .Big.BMI {
+        width: 60px; }
+      .content ol .Big.Weight {
+        width: 60px; }
+      .content ol .Big.Height {
+        width: 60px;
+        margin-right: 10px; }
+      .content ol .Small {
+        margin: 5px 0 0 0;
+        margin-left: 0;
+        font-size: 10px;
+        width: 40px;
+        float: left;
+        padding: 0 5px; }
+      .content ol .Small.Date {
+        width: 80px; }
+      .content ol:before, .content ol:after {
+        content: "";
+        display: table; }
+      .content ol:after {
+        clear: both; } }
+
+.footer {
+  width: 100%;
+  background-color: #FFD366; }
+  .footer img {
+    display: block;
+    margin: auto;
+    padding: 18px 0;
+    width: 55px; }
